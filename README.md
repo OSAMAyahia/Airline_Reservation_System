@@ -24,7 +24,6 @@ The Airline Reservation System is a comprehensive web application designed to fa
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Frontend**: HTML, EJS, JavaScript 
-- **Authentication**: JWT (JSON Web Tokens)
 
 
 ## Installation
@@ -32,8 +31,6 @@ The Airline Reservation System is a comprehensive web application designed to fa
 1. Clone the repository: 
    ```bash
    git clone https://github.com/yourusername/airline-reservation-system.git
-
-   
 
 2. Navigate to the project directory:
   ```bash
