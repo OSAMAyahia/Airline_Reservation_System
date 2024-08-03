@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card card-body">
+                    <h1 class="text-center mb-3">
+                        <i class="fas fa-plane"></i> Create Booking
+                    </h1>
+                    <form action="/booking/create" method="POST">
+                        <div class="form-group">
+                            <label for="PassengerID">Passenger ID</label>
+                            <input type="text" id="PassengerID" name="PassengerID" class="form-control" placeholder="Enter Passenger ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="FlightID">Flight ID</label>
+                            <input type="text" id="FlightID" name="FlightID" class="form-control" placeholder="Enter Flight ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="BookingDate">Booking Date</label>
+                            <input type="date" id="BookingDate" name="BookingDate" class="form-control" placeholder="Enter Booking Date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="SeatNumber">Seat Number</label>
+                            <input type="text" id="SeatNumber" name="SeatNumber" class="form-control" placeholder="Enter Seat Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Class">Class</label>
+                            <input type="text" id="Class" name="Class" class="form-control" placeholder="Enter Class" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Price">Price</label>
+                            <input type="number" id="Price" name="Price" class="form-control" placeholder="Enter Price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Status">Status</label>
+                            <input type="text" id="Status" name="Status" class="form-control" placeholder="Enter Status" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Create Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Flight</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-3">Create Flight</h1>
+        <% if (messages.success_msg) { %>
+            <div class="alert alert-success"><%= messages.success_msg %></div>
+        <% } %>
+        <% if (messages.error_msg) { %>
+            <div class="alert alert-danger"><%= messages.error_msg %></div>
+        <% } %>
+        <form action="/flight/create" method="POST">
+            <div class="form-group">
+                <label for="FlightNumber">Flight Number</label>
+                <input type="text" class="form-control" id="FlightNumber" name="FlightNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="DepartureAirport">Departure Airport</label>
+                <input type="text" class="form-control" id="DepartureAirport" name="DepartureAirport" required>
+            </div>
+            <div class="form-group">
+                <label for="ArrivalAirport">Arrival Airport</label>
+                <input type="text" class="form-control" id="ArrivalAirport" name="ArrivalAirport" required>
+            </div>
+            <div class="form-group">
+                <label for="DepartureTime">Departure Time</label>
+                <input type="datetime-local" class="form-control" id="DepartureTime" name="DepartureTime" required>
+            </div>
+            <div class="form-group">
+                <label for="ArrivalTime">Arrival Time</label>
+                <input type="datetime-local" class="form-control" id="ArrivalTime" name="ArrivalTime" required>
+            </div>
+            <div class="form-group">
+                <label for="Airline">Airline</label>
+                <input type="text" class="form-control" id="Airline" name="Airline" required>
+            </div>
+            <div class="form-group">
+                <label for="AircraftType">Aircraft Type</label>
+                <input type="text" class="form-control" id="AircraftType" name="AircraftType" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Flight</button>
+        </form>
+    </div>
+</body>
+</html>

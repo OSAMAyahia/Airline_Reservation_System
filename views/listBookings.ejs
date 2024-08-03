@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Bookings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-3">List of Bookings</h1>
+        <% if (messages.success_msg) { %>
+            <div class="alert alert-success"><%= messages.success_msg %></div>
+        <% } %>
+        <% if (messages.error_msg) { %>
+            <div class="alert alert-danger"><%= messages.error_msg %></div>
+        <% } %>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Passenger ID</th>
+                    <th>Flight ID</th>
+                    <th>Booking Date</th>
+                    <th>Seat Number</th>
+                    <th>Class</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookings.forEach(booking => { %>
+                    <tr>
+                        <td><%= booking.PassengerID %></td>
+                        <td><%= booking.FlightID %></td>
+                        <td><%= booking.BookingDate.toDateString() %></td>
+                        <td><%= booking.SeatNumber %></td>
+                        <td><%= booking.Class %></td>
+                        <td><%= booking.Price %></td>
+                        <td><%= booking.Status %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/booking/create" class="btn btn-secondary">Create Booking </a>
+    </div>
+</body>
+</html>

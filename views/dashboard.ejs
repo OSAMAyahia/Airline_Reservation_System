@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mt-4">Dashboard Page</h1>
+        <p class="lead mb-3">Welcome, <%= user.name %>!</p>
+        <p>Email: <%= user.email %></p>
+        <a href="/booking/list" class="btn btn-primary ml-2">View Bookings</a>
+        <a href="/users/logout" class="btn btn-secondary">Logout</a>
+        
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Line Chart</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h3>Bar Chart</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- <div class="row mt-5">
+            <div class="col-md-12">
+                <h3>Flight and Ticket Information</h3>
+                <p>Flight Number: <%= flight.number %></p>
+                <p>Departure: <%= flight.departure %></p>
+                <p>Arrival: <%= flight.arrival %></p>
+                <p>Date: <%= flight.date %></p>
+                <p>Class: <%= ticket.class %></p>
+                <p>Seat: <%= ticket.seat %></p>
+            </div>
+        </div> -->
+    </div>
+    
+    <script>
+        // بيانات الرسوم البيانية
+        const lineChartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Dataset 1',
+                borderColor: 'rgb(75, 192, 192)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        };
+
+        const barChartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Dataset 1',
+                backgroundColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        };
+
+        // رسم الرسوم البيانية
+        window.onload = function() {
+            const lineCtx = document.getElementById('lineChart').getContext('2d');
+            new Chart(lineCtx, {
+                type: 'line',
+                data: lineChartData,
+            });
+
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: barChartData,
+            });
+        };
+    </script>
+</body>
+</html>
