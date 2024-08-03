@@ -36,7 +36,6 @@ The Airline Reservation System is a comprehensive web application designed to fa
   ```bash
    cd airline-reservation-system
 
-
 ##Install dependencies:
    ```bash
    npm install
@@ -44,9 +43,3 @@ The Airline Reservation System is a comprehensive web application designed to fa
 ##Start the application:
   ```bash
   npm start   
-
-   
-   
-
-
-
